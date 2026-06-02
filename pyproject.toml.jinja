@@ -1,5 +1,5 @@
 [project]
-name = "{{ project_name }}"
+name = "{{ project_name | regex_replace('[^a-zA-Z0-9]+', '-') | lower }}"
 version = "0.1.0"
 description = ""
 readme = "README.md"
