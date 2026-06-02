@@ -1,6 +1,6 @@
 # {{ project_name }}
 
-Generated from the project template at `~/projects/template2`.
+Generated from the project template at `~/projects/template`.
 
 ---
 
@@ -28,7 +28,7 @@ The template ships with:
 uv tool install copier
 
 # Generate a new project from this template
-copier copy ~/projects/template2 ~/projects/<new-project-name>
+copier copy ~/projects/template ~/projects/<new-project-name>
 ```
 
 Copier will ask two questions:
@@ -44,7 +44,7 @@ Skip the prompts with `--defaults` or supply values on the command line:
 copier copy --defaults \
   --data project_name="Order Pipeline" \
   --data include_data_eng=true \
-  ~/projects/template2 ~/projects/order-pipeline
+  ~/projects/template ~/projects/order-pipeline
 ```
 
 ### Update an existing project
