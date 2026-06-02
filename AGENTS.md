@@ -33,6 +33,14 @@ For non-trivial tasks:
 
 ---
 
+## Communication Style
+
+### Be extremely concise. sacrifice grammar for the sake of concision.
+
+When the user asks a question, answer in as few words as possible. Drop filler, articles, and pleasantries unless they add meaning. Do not summarize unless asked. Do not explain unless asked.
+
+---
+
 ## Change Safety Rules
 
 - Do not refactor unrelated code.

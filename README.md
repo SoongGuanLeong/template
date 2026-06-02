@@ -13,7 +13,7 @@ The template ships with:
 - **`AGENTS.md`** — behavior policy for AI coding agents
 - **`docs/standards/`** — technical rules (Python, testing, infrastructure; data-eng overlay optional)
 - **`Makefile`** — `make help`, `make lint`, `make format`, `make test`, `make clean`
-- **`opencode.json`** — AI agent config (MCPs, skills, instructions)
+- **`opencode.jsonc`** — AI agent config (MCPs, skills, instructions)
 - **`.opencode/skills/`** — 15 curated AI agent skills (see [Skills](#skills) below)
 - **`.env.example`** — environment variable template
 
@@ -76,22 +76,23 @@ The generated project is a starting point. Typical first steps:
    cp .env.example .env
    # edit .env with your values
    ```
-3. **Install Python dependencies** (if Python is used):
+3. **Install Python dependencies**:
    ```bash
    uv sync
    ```
-4. **Verify the scaffold**:
+4. **Verify the scaffold** (lint clean, 0 tests collected — expected on a fresh project):
    ```bash
    make help
    make lint
    make test
    ```
+5. **Add your code** under `src/<package>/` and tests under `tests/`. The `pyproject.toml` is templated with `{{ project_name }}` — update the `name` and `authors` fields to match your package if needed.
 
 ---
 
 ## Skills
 
-The template ships 15 AI agent skills in `.opencode/skills/`. They're wired via `opencode.json`'s `skills.paths` field. The full list:
+The template ships 15 AI agent skills in `.opencode/skills/`. They're wired via `opencode.jsonc`'s `skills.paths` field. The full list:
 
 - `caveman` — ultra-compressed communication mode
 - `diagnose` — disciplined bug diagnosis
@@ -108,6 +109,8 @@ The template ships 15 AI agent skills in `.opencode/skills/`. They're wired via 
 - `to-prd` — turn context into a PRD
 - `triage` — issue state machine
 - `zoom-out` — broader context / perspective
+
+**MCPs (in `opencode.jsonc`):** `github` (default on), `context7` / `firecrawl` / `chrome-devtools` (default off, opt-in per project). Opencode's native filesystem/read/write/edit tools cover local file I/O, so no filesystem MCP is needed.
 
 ---
 
