@@ -14,6 +14,10 @@ _exclude:
   - ".github/"
   - ".env"
 
+# Render every text file as a Jinja template by default (instead of
+# only files ending in `.jinja`). Binary files fall back to plain copy.
+_templates_suffix: ""
+
 # --- Jinja extensions ---
 
 # Required for `{{ now() }}` (used in LICENSE year).
