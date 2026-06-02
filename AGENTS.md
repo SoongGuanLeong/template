@@ -61,7 +61,7 @@ When the user asks a question, answer in as few words as possible. Drop filler, 
 
 Before marking work complete:
 - Run `make lint`.
-- Run `make test`.
+- If a `test` target exists, run `make test`.
 - Confirm success criteria are satisfied.
 - Do not assume success without verification.
 
@@ -90,3 +90,19 @@ Before marking work complete:
 - `AGENTS.md` defines behavior rules only.
 - Technical standards live in `docs/standards/`.
 - Do not assume implementation details not defined in this file or standards docs.
+
+---
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in this repo's GitHub Issues. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Canonical role names (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context — one `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.

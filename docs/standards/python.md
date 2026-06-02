@@ -29,6 +29,25 @@ These standards were written on June 2, 2026 using Context7. Verify currency bef
 - No dynamic schema dicts crossing function boundaries.
 - Use explicit models for structured data (see data_contracts.md).
 
+## Formatting
+- Line length: 120 characters.
+- Use `ruff format`.
+
+## Docstrings
+- NumPy style for all public functions.
+
+## Comments
+- Only when logic is non-obvious.
+- Must be full sentences.
+
+## Naming
+- `snake_case` for functions and variables.
+- `PascalCase` for classes.
+
+## Anti-patterns
+- No overly generic abstractions for single-use code.
+- No premature optimization.
+
 ## Execution
 - Python 3.11+
 - Ruff + type checker must pass before commit.
