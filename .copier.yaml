@@ -1,0 +1,33 @@
+---
+# Copier template configuration.
+# https://copier.readthedocs.io/
+
+# Skip these files when generating a new project.
+# .copier.yaml is auto-excluded by Copier.
+_exclude:
+  - ".git/"
+  - ".github/"
+  - ".gitignore.template"  # in case we ever add one
+
+# Skip files/dirs that only apply when the data-eng overlay is enabled.
+# These are re-included below via the `when` conditionals.
+_min_exclude:
+  - "docs/standards/data-eng/"
+
+# --- Prompts ---
+
+project_name:
+  type: str
+  help: "Human-readable project name (e.g. 'Order Pipeline'). Used in LICENSE and README."
+
+include_data_eng:
+  type: bool
+  default: false
+  help: "Include data-engineering standards (Spark, SQL, data contracts)?"
+
+# --- Conditional inclusion ---
+
+# Re-include data-eng standards only when the overlay is enabled.
+# Path patterns are relative to the template root.
+"docs/standards/data-eng":
+  when: "{{ include_data_eng }}"
