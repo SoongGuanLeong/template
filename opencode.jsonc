@@ -41,7 +41,7 @@
     "obsidian": {
       "type": "local",
       "command": ["npx","@bitbonsai/mcpvault@latest","{env:OBSIDIAN_VAULT_PATH}"],
-      "enabled": true
+      "enabled": false
     }
   }
 }
