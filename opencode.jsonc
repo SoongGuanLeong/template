@@ -37,6 +37,11 @@
       "type": "local",
       "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
       "enabled": false
+    },
+    "obsidian": {
+      "type": "local",
+      "command": ["npx","@bitbonsai/mcpvault@latest","{env:OBSIDIAN_VAULT_PATH}"],
+      "enabled": true
     }
   }
 }
